@@ -29,6 +29,15 @@ public class Order {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
+    /*
+    원래는
+    persist(orderItemA);
+    persist(orderItemB);
+    persist(orderItemC);
+    persist(order);
+    cascade ALL 하면 그냥
+    persist(order); 만 하면됨
+    */
 
     private LocalDateTime orderDate; //주문시간
 

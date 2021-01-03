@@ -1,0 +1,18 @@
+spring:
+#  기본적으로 in memory 모드로 돌려버리므로 생략 가능
+#  datasource:
+#    url: jdbc:h2:mem:test
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: create #table 날리고 create 함
+#    properties:
+#      hibernate:
+#  #     show_sql: true
+#        format_sql: true
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace
+# org.hibernate.type: trace
