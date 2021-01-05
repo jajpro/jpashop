@@ -11,7 +11,8 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true) //public method 들 모두에 적용
-//@RequiredArgsConstructor final member 대상으로 생성자 만들어줌. 아래 생략 가능
+/* @RequiredArgsConstructor final member 대상으로 생성자 만들어줌. 현재 처럼 생성자 인젝션 또는 @Autowired 대신
+private final MemberRepository memberRepository; 한줄로 가능 */
 public class MemberService {
 
     /* 필드 주입 방법 - 임의적인 주입이 까다로움
