@@ -19,7 +19,9 @@ public class ItemRepository {
             em.persist(item);
         } else {
             //이미 DB 에 등록된 것으로 update 로 간주
-            em.merge(item);
+            em.merge(item); //item 은 그냥 파라미터로 넘어온 것이고 뭘 더 하려면 Item merge = em.merge(item); 에서 영속성인 merge 로 해야함.
+            //merge 시 모든 속성이 변경되는데 값이 없으면 null 로 업데이트할 위험. 따라서 실무에서는 위험. 수정할 시에 빼먹은 필드 있으면 null.
+            //merge 쓰지말고 변경감지를 쓰자.
         }
     }
 
